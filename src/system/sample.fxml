@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="840.0" prefWidth="1221.0" style="-fx-background-color: #343639;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="system.AlgorithmController">
+   <children>
+      <TextArea fx:id="factsArea" layoutX="33.0" layoutY="114.0" prefHeight="693.0" prefWidth="355.0" text="Peter je rodic Jano&#10;Peter je rodic Vlado&#10;manzelia Peter Eva&#10;Vlado je rodic Maria&#10;Vlado je rodic Viera&#10;muz Peter&#10;muz Jano&#10;muz Vlado&#10;zena Maria&#10;zena Viera&#10;zena Eva" />
+      <Label layoutX="33.0" layoutY="67.0" prefHeight="40.0" prefWidth="113.0" text="Facts" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="433.0" layoutY="67.0" prefHeight="40.0" prefWidth="113.0" text="Rules" textFill="#ffc02d">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="rulesArea" layoutX="433.0" layoutY="114.0" prefHeight="423.0" prefWidth="745.0" text="DruhyRodic1:&#10;IF (?X je rodic ?Y)+(manzelia ?X ?Z)&#10;THEN (ADD ?Z je rodic ?Y);&#10;DruhyRodic2:&#10;IF (?X je rodic ?Y)+(manzelia ?Z ?X)&#10;THEN (ADD ?Z je rodic ?Y);&#10;Otec:&#10;IF (?X je rodic ?Y)+(muz ?X)&#10;THEN (ADD ?X je otec ?Y);&#10;Matka:&#10;IF (?X je rodic ?Y)+(zena ?X)&#10;THEN (ADD ?X je matka ?Y);&#10;Surodenci:&#10;IF (?X je rodic ?Y)+(?X je rodic ?Z)+(&lt;&gt; ?Y ?Z)&#10;THEN (ADD ?Y a ?Z su surodenci);&#10;Brat:&#10;IF (?Y a ?Z su surodenci)+(muz ?Y)&#10;THEN (ADD ?Y je brat ?Z);&#10;Stryko:&#10;IF (?Y je brat ?Z)+(?Z je rodic ?X)&#10;THEN (ADD ?Y je stryko ?X)+(MESSAGE ?X ma stryka);&#10;Mazanie:&#10;IF (?Y je stryko ?X)+(zena ?X)&#10;THEN (REMOVE zena ?X)" />
+      <TextArea fx:id="outputArea" layoutX="433.0" layoutY="602.0" prefHeight="205.0" prefWidth="745.0" text="&#10;" />
+      <Label layoutX="433.0" layoutY="557.0" prefHeight="40.0" prefWidth="113.0" text="Output" textFill="#7fea86">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Button layoutX="1065.0" layoutY="52.0" mnemonicParsing="false" onAction="#startAlgorithm" prefHeight="31.0" prefWidth="113.0" text="Start !" />
+   </children>
+</AnchorPane>
